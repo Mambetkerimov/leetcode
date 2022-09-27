@@ -5,7 +5,19 @@
 // Link to problem: https://leetcode.com/problems/plus-one/
 
 function plusOne(digits: number[]): number[] {
-    const number = Number(digits.join("")) + 1;
-    const newArray = number.toString().split("").map(Number);
-    return newArray;
+    let i = digits.length - 1;
+    let val = 0;
+    let carry = 1;
+    while (i >= 0 && carry) {
+        val = digits[i] + carry;
+        carry = Math.floor(val / 10);
+        digits[i] = val % 10;
+        i--;
+    }
+    if (carry) digits.unshift(carry);
+    return digits;
 };
+
+plusOne([1,2,3]);
+plusOne([4,3,2,1]);
+plusOne([9]);
