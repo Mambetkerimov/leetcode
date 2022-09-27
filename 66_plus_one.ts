@@ -4,8 +4,8 @@
 // Increment the large integer by one and return the resulting array of digits.
 // Link to problem: https://leetcode.com/problems/plus-one/
 
-function plusOne(digits: number[]) {
+function plusOne(digits: number[]): number[] {
     const number = Number(digits.join("")) + 1;
     const newArray = number.toString().split("").map(Number);
-    console.log(newArray);
+    return newArray;
 };
